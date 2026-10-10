@@ -11,20 +11,38 @@
 </head>
 
 <body>
-    <header class="bg-black border-b px-6 py-3 flex justify-between itens-center shadow-xs">
+    <header class="bg-black border-b px-6 py-3 flex items-center shadow-xs">
+
+    <div class="flex items-center space-x-6">
         <div>
             <h1 class="text-white text-xl">TradingView Finanças</h1>
         </div>
-        <div class="flex items-center space-x-4 font-medium text-white">
-            <a href="#" class="hover:text-blue-600" transition>Inicio</a>
-            <a href="#" class="hover:text-blue-600" transition>Produtos</a>
-            <a href="#" class="hover:text-blue-600" transition>Analise</a>
-            <a href="#" class="hover:text-blue-600" transition>Sobre nós</a>
-            <a href="#" class="hover:text-blue-600" transition>Suporte</a>
-            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg font-poppins text-sm hover:text-blue-400 transition ">Entrar</button>
+
+        <div class="relative w-72">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </span>
+
+            <input type="text" placeholder="Pesquise" class="w-full bg-[#f0f3fa] text-sm pl-9 pr-4 py-1.5 rounded-lg border border-transparent focus:bg-white focus:border-blue-500 outline-none transition">
         </div>
-    </header>
-    
+    </div>
+
+    <nav class="ml-auto flex items-center gap-4 font-medium text-white">
+        <a href="#" class="hover:text-blue-600 transition">Início</a>
+        <a href="#" class="hover:text-blue-600 transition">Produtos</a>
+        <a href="#" class="hover:text-blue-600 transition">Análise</a>
+        <a href="#" class="hover:text-blue-600 transition">Sobre nós</a>
+        <a href="#" class="hover:text-blue-600 transition">Suporte</a>
+
+        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg font-poppins text-sm hover:text-blue-400 transition">Entrar</button>
+    </nav>
+
+</header>
+
 </body>
+
+</html>
 
 </html>
