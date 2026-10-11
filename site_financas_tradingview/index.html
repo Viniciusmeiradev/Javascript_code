@@ -106,7 +106,7 @@
                 <!--Indice5-->
                 <div class="py-3 flex justify-between items-center hover:bg-gray-800 px-2 rounded-xl transition cursor-pointer">
                     <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 rounded-full bg-blue-800 text-white font-bold flex items-center justify-center text-xs">PETR</div>
+                        <div class="w-8 h-8 rounded-full bg-green-800 text-white font-bold flex items-center justify-center text-xs">PETR</div>
                         <div>
                             <div class="text-sm font-bold text-white flex items-center space-x-1">
                                 <span>PETR4</span>
@@ -122,7 +122,42 @@
                     </div>
                 </div>
             </div>
+            <div class="mt-auto pt-4">
+                <a href="#" class="text-blue-600 font-semibold text-sm hover:underline flex items-center">Melhores Ativos da Semana
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+            </div>
         </aside>
-
     </main>
+    <script>
+        const chartContainer = document.getElementById('grafico-principal');
+        const grafico = LightweightCharts.createChart(chartContainer, {
+            layout:{
+                    background:{type: 'solid', color: 'black'},
+                    textColor: 'white', 
+                    attributionLogo: false
+            },
+
+            grid:{
+                vertLines: {color:'#f0f3fa'},
+                horzLines: {color:'#f0f3fa'},
+            },
+
+            rightPriceScale:{
+                borderColor: '#e0e3eb',
+            },
+
+            timeScale:{
+                borderColor:'#e0e3eb',
+                timeVisible:true,
+                secondVisible: false,
+            },
+            crosshair:{
+                mode: LightweightCharts.CrosshairMode.Normal,
+            },
+        });
+
+
+    </script>
+
 </body>
+</html>
