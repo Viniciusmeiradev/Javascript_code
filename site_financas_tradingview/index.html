@@ -39,9 +39,9 @@
         <button class="bg-blue-600 text-white px-4 py-2 rounded-lg font-poppins text-sm hover:text-blue-400 transition">Entrar</button>
     </nav>
 </header>
-<body class="bg-[#f8fafd] text-[#131722] font-sans min-h-screen flex flex-col">
+<body class="bg-indigo-800 text-[#131722] font-sans min-h-screen flex flex-col">
     <main class="flex-1 max-w-7xl max-h-2 mx-auto w-full p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <section class="lg:col-span-2  bg-blue border border-blue rounded-2xl p-6 shadow-xs flex flex-col justify-between">
+        <section class="bg-amber-100 lg:col-span-2  bg-blue border border-blue rounded-2xl p-6 shadow-xs flex flex-col justify-between">
             <div class="flex justify-between items-start mb-4">
                 <div>
                     <div class="flex items-center space-x-2">
@@ -52,7 +52,7 @@
                     <div class="flex items-baseline space-x-3 mt-2">
                         <span class="text-3xl font-bold tracking-tight">209.066,90</span>
                         <span class="text-xs font-semibold">BRL</span>
-                        <span class="text-sm font-bold text-emerald-600">+1,38%</span>
+                        <span class="text-sm font-bold text-red-800">+1,38%</span>
                     </div>
                 </div>
             </div>
@@ -258,7 +258,14 @@
             { time: '2026-10-06', value: 205835.30 },
             { time: '2026-10-07', value: 204302.33 },
             { time: '2026-10-08', value: 206220.23 },
-            { time: '2026-10-09', value: 209066.90 }
+            { time: '2026-10-09', value: 209066.90 },
+            { time: '2026-10-10', value: 187197.45 },
+            { time: '2026-10-11', value: 192114.55 },
+            { time: '2026-10-12', value: 206911.89 },
+            { time: '2026-10-13', value: 205835.30 },
+            { time: '2026-10-14', value: 204302.33 },
+            { time: '2026-10-15', value: 206220.23 },
+            { time: '2026-10-16', value: 216220.23 }
         ];
 
         areaSeries.setData(intradayData);
@@ -279,9 +286,16 @@
                 ultimoPreco = Number((ultimoPreco + variacao).toFixed(2));
 
                 const timestampAtualizado = {
-                    
-                }
-            })
+                    time: Math.floor(Date.now() / 1000),
+                    open: ultimoPreco - 0.5, 
+                    high: ultimoPreco + 1.0,
+                    low: ultimoPreco - 1.0,
+                    close: ultimoPreco
+                };
+
+                candlestickSeries.update(timestampAtualizado); 
+            }, 1000);
+            iniciarTempoReal();
         }
     </script>
 
